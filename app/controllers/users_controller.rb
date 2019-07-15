@@ -1,30 +1,30 @@
 class UsersController < ApplicationController
 
-	def create
-	    @user = User.new(user_params)
-	    if @user.save
-	    
-	      # @token = encode_token({ user_id: @user.id })
-	      # render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
-	      render json: { message: 'User created'}, status: :created
-	    else
-	      render json: { error: @user.error.full_messages }, status: :bad_request
-	    end
-	 end
+	 def index
+    @users = User.all
+    render json: @users
+  end
 
-	def index 
-		@users = User.all
-		render json: @users
-	end
+  def show
+    user = User.find(params[:id])
+    render json: user
+  end
 
-	def show
-		@user = User.find(params[:id])
-		render json: @user
-	end
+  def create
+    user = User.new(email: params[:email], password: params[:password], first_name: params[:first_name], last_name: params[:last_name], bio: params[:bio], photo_url: params[:photo_url])
+    # byebug
+    if user.save
 
-	private
-		def user_params
-		params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :photo_url, :program)
-	end
+      token = encode_token(user.id)
+      render json: {user: UserSerializer.new(user), token: token}
+    else
+      render json: {errors: user.errors.full_messages}
+    end
+  end
+
+	# private
+	# 	def user_params
+	# 	params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :photo_url, :program)
+	# end
 
 end
