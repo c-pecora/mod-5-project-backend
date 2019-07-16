@@ -1,9 +1,9 @@
 class AuthController < ApplicationController
 	def login
-    # byebug
-    user = User.find_by(email: params[:email])
+    
+    user = User.find_by(email: params[:user][:email])
 
-    if user && user.authenticate(params[:password])
+    if user && user.authenticate(params[:user][:password])
       token = encode_token(user.id)
       render json: {user: UserSerializer.new(user), token: token}
     else
@@ -18,5 +18,5 @@ class AuthController < ApplicationController
       render json: {errors: "Don't touch my cookies!"}
     end
   end
-  
+
 end
