@@ -1,6 +1,7 @@
 class ConversationsChannel < ApplicationCable::Channel
 
   def subscribed
+  	byebug
     conversation = Conversation.find_by(params[:id])
     stream_from conversation
   end
@@ -9,5 +10,5 @@ class ConversationsChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
     raise "stop"
   end
-  
+
 end
