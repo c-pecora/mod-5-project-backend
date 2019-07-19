@@ -6,7 +6,7 @@ class ConversationsController < ApplicationController
 	end
 
 	def create
-    conversation = Conversation.new(conversation_params)
+    conversation = Conversation.find_or_create_by(conversation_params)
     if conversation.save
 	    serialized_data = ActiveModelSerializers::Adapter::Json.new(ConversationSerializer.new(conversation)).serializable_hash
 	    ActionCable.server.broadcast 'conversations_channel', serialized_data
