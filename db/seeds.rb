@@ -50,12 +50,14 @@
 # ])
 first_convo = Conversation.create({
 	title: "04-22-19",
-	creator: "Carly"
+	creator: "Carly",
+	purpose: "Channel for Mod 5"
 })
 
 second_convo = Conversation.create({
 	title: "General",
-	creator: "lindsey"
+	creator: "lindsey",
+	purpose: "General channel for everyone"
 })
 
 
