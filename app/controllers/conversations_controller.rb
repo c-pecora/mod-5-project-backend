@@ -6,11 +6,13 @@ class ConversationsController < ApplicationController
 	end
 
 	def create
-    conversation = Conversation.find_or_create_by(conversation_params)
+	
+    conversation = Conversation.create(conversation_params)
+
     if conversation.save
-	    serialized_data = ActiveModelSerializers::Adapter::Json.new(ConversationSerializer.new(conversation)).serializable_hash
-	    ActionCable.server.broadcast 'conversations_channel', serialized_data
-	    head :ok
+	    # serialized_data = ActiveModelSerializers::Adapter::Json.new(ConversationSerializer.new(conversation)).serializable_hash
+	   	ActionCable.server.broadcast 'conversations_channel', ConversationSerializer.new(conversation)
+	    render json: conversation
     end
   end
 
@@ -23,7 +25,7 @@ class ConversationsController < ApplicationController
 private
 
   def conversation_params
-    params.require(:conversation).permit(:title)
+    params.require(:conversation).permit(:title, :purpose, :creator)
   end
 
 end

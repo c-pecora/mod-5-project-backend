@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
 	  message = Message.new(message_params)
 	  conversation = Conversation.find(message_params[:conversation_id])
 	  if message.save
-	      MessagesChannel.broadcast_to conversation, message
+	      MessagesChannel.broadcast_to conversation, MessageSerializer.new(message)
 	      render json: message
       end
      # render json: message
