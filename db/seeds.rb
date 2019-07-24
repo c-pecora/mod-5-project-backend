@@ -56,8 +56,20 @@ first_convo = Conversation.create({
 
 second_convo = Conversation.create({
 	title: "General",
-	creator: "lindsey",
+	creator: "Lindsey",
 	purpose: "General channel for everyone",
+})
+
+third_convo = Conversation.create({
+	title: "Hello",
+	purpose: "Introduce Yourself",
+	creator: "Amy"
+})
+
+fourth_convo = Conversation.create({
+	title: "Issues",
+	purpose: "Ask for help here",
+	creator: "Amy"
 })
 
 

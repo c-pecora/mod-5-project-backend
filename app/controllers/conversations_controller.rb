@@ -9,18 +9,22 @@ class ConversationsController < ApplicationController
 	
     conversation = Conversation.create(conversation_params)
 
-    if conversation.save
-	    # serialized_data = ActiveModelSerializers::Adapter::Json.new(ConversationSerializer.new(conversation)).serializable_hash
-	   	ActionCable.server.broadcast 'conversations_channel', ConversationSerializer.new(conversation)
-	    render json: conversation
+	    if conversation.save
+		    # serialized_data = ActiveModelSerializers::Adapter::Json.new(ConversationSerializer.new(conversation)).serializable_hash
+		   	ActionCable.server.broadcast 'conversations_channel', ConversationSerializer.new(conversation)
+		    render json: conversation
+	    end
     end
-  end
 
 
 	def show
 		@conversation = Conversation.find(params[:id])
 		render json: @conversation
 	end	
+
+	def join_conversation
+		byebug
+	end
 
 private
 
