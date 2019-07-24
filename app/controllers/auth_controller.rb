@@ -5,6 +5,7 @@ class AuthController < ApplicationController
 
     if user && user.authenticate(params[:user][:password])
       token = encode_token(user.id)
+      
       render json: {user: UserSerializer.new(user), token: token}
     else
       render json: {errors: "Incorrect Login Information"}

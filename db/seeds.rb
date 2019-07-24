@@ -93,6 +93,17 @@ lindsey = User.create({
 	conversation_ids: [first_convo.id, second_convo.id]
 })
 
+amy = User.create({
+	first_name: "Amy",
+	last_name: "Bonomo",
+	email: "amyb@gmail.com",
+	password: "bar",
+	photo_url: "nothing",
+	bio: "hey there",
+	conversation_ids: [first_convo.id, second_convo.id, third_convo.id, fourth_convo.id]
+})
+
+
 first_message = Message.create({
 	text: "Hello World",
 	conversation_id: 1,
@@ -109,5 +120,17 @@ third_message = Message.create({
 	text: "C00L",
 	conversation_id: 1,
 	user_id: 1
+})
+
+fourth_message = Message.create({
+	text: "Hey guys! Anyone need any help?",
+	conversation_id: 4,
+	user_id: 3
+})
+
+fifth_message = Message.create({
+	text: "Let me know!",
+	conversation_id: 4,
+	user_id: 3
 })
 
