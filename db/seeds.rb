@@ -51,13 +51,13 @@
 first_convo = Conversation.create({
 	title: "04-22-19",
 	creator: "Carly",
-	purpose: "Channel for Mod 5"
+	purpose: "Channel for Mod 5",
 })
 
 second_convo = Conversation.create({
 	title: "General",
 	creator: "lindsey",
-	purpose: "General channel for everyone"
+	purpose: "General channel for everyone",
 })
 
 
@@ -78,7 +78,7 @@ lindsey = User.create({
 	password: "bar",
 	photo_url: "nothing",
 	bio: "blah",
-	conversation_ids: [second_convo.id]
+	conversation_ids: [first_convo.id, second_convo.id]
 })
 
 first_message = Message.create({
