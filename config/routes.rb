@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   	post "/login", to: "auth#login"
   	get "/auto_login", to: "auth#auto_login"
   	post "/join_conversation", to: "conversations#join_conversation"
+  	post "/create_dm", to: "conversations#create_dm"
   	mount ActionCable.server => '/cable'
 end

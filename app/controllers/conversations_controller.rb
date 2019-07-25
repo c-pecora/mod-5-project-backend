@@ -16,6 +16,18 @@ class ConversationsController < ApplicationController
 	    end
     end
 
+    def create_dm
+    	conversation = Conversation.create(dm: params[:dm], title: params[:title])
+    	if conversation.save
+	    	params[:user_ids].each do |user_id| 
+	    		user = User.find(user_id)
+	    		user.conversations << conversation
+	    		user.save
+    		end
+			ActionCable.server.broadcast 'conversations_channel', ConversationSerializer.new(conversation)
+		    render json: conversation
+		end
+    end
 
 	def show
 		@conversation = Conversation.find(params[:id])
@@ -42,7 +54,7 @@ class ConversationsController < ApplicationController
 private
 
   def conversation_params
-    params.require(:conversation).permit(:title, :purpose, :creator)
+    params.require(:conversation).permit(:title, :purpose, :creator, :dm)
   end
 
 end
