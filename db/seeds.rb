@@ -78,7 +78,7 @@ carly = User.create({
 	last_name: "Pecora",
 	email: "carlyannpecora@gmail.com",
 	password: "foo",
-	photo_url: "nothing",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564061790/hello_world/lnjtyflijeweedxggnit.jpg",
 	bio: "i rule",
 	conversation_ids: [first_convo.id, second_convo.id]
 })
@@ -88,7 +88,7 @@ lindsey = User.create({
 	last_name: "Pecora",
 	email: "lindster987@gmail.com",
 	password: "bar",
-	photo_url: "nothing",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564070884/hello_world/IMG_0816_nkhdyj.jpg",
 	bio: "blah",
 	conversation_ids: [first_convo.id, second_convo.id]
 })
@@ -98,7 +98,7 @@ amy = User.create({
 	last_name: "Bonomo",
 	email: "amyb@gmail.com",
 	password: "bar",
-	photo_url: "nothing",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564070835/hello_world/58570534707__F01D8A8F-DB35-4C17-8539-322BC4763AD8_a83ahu.jpg",
 	bio: "hey there",
 	conversation_ids: [first_convo.id, second_convo.id, third_convo.id, fourth_convo.id]
 })

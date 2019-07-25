@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_165214) do
   create_table "conversations", force: :cascade do |t|
     t.string "title"
     t.string "creator"
+    t.boolean "dm", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "purpose"
