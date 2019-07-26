@@ -56,8 +56,20 @@ first_convo = Conversation.create({
 
 second_convo = Conversation.create({
 	title: "General",
-	creator: "lindsey",
+	creator: "Lindsey",
 	purpose: "General channel for everyone",
+})
+
+third_convo = Conversation.create({
+	title: "Hello",
+	purpose: "Introduce Yourself",
+	creator: "Amy"
+})
+
+fourth_convo = Conversation.create({
+	title: "Issues",
+	purpose: "Ask for help here",
+	creator: "Amy"
 })
 
 
@@ -66,7 +78,7 @@ carly = User.create({
 	last_name: "Pecora",
 	email: "carlyannpecora@gmail.com",
 	password: "foo",
-	photo_url: "nothing",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564061790/hello_world/lnjtyflijeweedxggnit.jpg",
 	bio: "i rule",
 	conversation_ids: [first_convo.id, second_convo.id]
 })
@@ -76,10 +88,21 @@ lindsey = User.create({
 	last_name: "Pecora",
 	email: "lindster987@gmail.com",
 	password: "bar",
-	photo_url: "nothing",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564070884/hello_world/IMG_0816_nkhdyj.jpg",
 	bio: "blah",
 	conversation_ids: [first_convo.id, second_convo.id]
 })
+
+amy = User.create({
+	first_name: "Amy",
+	last_name: "Bonomo",
+	email: "amyb@gmail.com",
+	password: "bar",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564070835/hello_world/58570534707__F01D8A8F-DB35-4C17-8539-322BC4763AD8_a83ahu.jpg",
+	bio: "hey there",
+	conversation_ids: [first_convo.id, second_convo.id, third_convo.id, fourth_convo.id]
+})
+
 
 first_message = Message.create({
 	text: "Hello World",
@@ -97,5 +120,17 @@ third_message = Message.create({
 	text: "C00L",
 	conversation_id: 1,
 	user_id: 1
+})
+
+fourth_message = Message.create({
+	text: "Hey guys! Anyone need any help?",
+	conversation_id: 4,
+	user_id: 3
+})
+
+fifth_message = Message.create({
+	text: "Let me know!",
+	conversation_id: 4,
+	user_id: 3
 })
 
