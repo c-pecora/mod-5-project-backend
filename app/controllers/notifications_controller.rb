@@ -6,10 +6,9 @@ class NotificationsController < ApplicationController
     		notification = Notification.new(content: "new notification in #{params[:content]}", user_id: user.id)
 		    if notification.save
 			   	ActionCable.server.broadcast 'notifications_channel', NotificationSerializer.new(notification)
-			    render json: notification
 			end
 	    end
-
+	    render json: users
 	end
 
 	def update
