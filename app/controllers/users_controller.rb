@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def unreads
+    byebug
+  end
+
 	private
 		def user_params
 		params.require(:user).permit(:first_name, :last_name, :email, :password, :bio, :photo_url, :program)

@@ -134,3 +134,13 @@ fifth_message = Message.create({
 	user_id: 3
 })
 
+first_note = Notification.create({
+	user_id: 1,
+	content: "1 new notification"
+})
+
+first_note = Notification.create({
+	user_id: 2,
+	content: "1 new notification"
+})
+
