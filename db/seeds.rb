@@ -49,27 +49,27 @@
 # }
 # ])
 first_convo = Conversation.create({
-	title: "04-22-19",
-	creator: "Carly",
-	purpose: "Channel for Mod 5",
-})
-
-second_convo = Conversation.create({
 	title: "General",
-	creator: "Lindsey",
+	creator: "Carly",
 	purpose: "General channel for everyone",
 })
 
+second_convo = Conversation.create({
+	title: "04-22-19",
+	creator: "Lindsey",
+	purpose: "Channel for Mod 5",
+})
+
 third_convo = Conversation.create({
-	title: "Hello",
-	purpose: "Introduce Yourself",
+	title: "Resources",
+	purpose: "Post any interesting coding resources!",
 	creator: "Amy"
 })
 
 fourth_convo = Conversation.create({
 	title: "Issues",
 	purpose: "Ask for help here",
-	creator: "Amy"
+	creator: "Carly"
 })
 
 
@@ -78,9 +78,9 @@ carly = User.create({
 	last_name: "Pecora",
 	email: "carlyannpecora@gmail.com",
 	password: "foo",
-	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564061790/hello_world/lnjtyflijeweedxggnit.jpg",
-	bio: "i rule",
-	conversation_ids: [first_convo.id, second_convo.id]
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564680699/hello_world/txrg3gknsy4oeoqmwef0.jpg",
+	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+	conversation_ids: [first_convo.id, fourth_convo.id]
 })
 
 lindsey = User.create({
@@ -88,8 +88,8 @@ lindsey = User.create({
 	last_name: "Pecora",
 	email: "lindster987@gmail.com",
 	password: "bar",
-	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564070884/hello_world/IMG_0816_nkhdyj.jpg",
-	bio: "blah",
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564680893/hello_world/pslkwoanc294fcyjvjpj.jpg",
+	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 	conversation_ids: [first_convo.id, second_convo.id]
 })
 
@@ -98,49 +98,27 @@ amy = User.create({
 	last_name: "Bonomo",
 	email: "amyb@gmail.com",
 	password: "bar",
-	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564070835/hello_world/58570534707__F01D8A8F-DB35-4C17-8539-322BC4763AD8_a83ahu.jpg",
-	bio: "hey there",
-	conversation_ids: [first_convo.id, second_convo.id, third_convo.id, fourth_convo.id]
+	photo_url: "https://res.cloudinary.com/dyd4wpdbo/image/upload/v1564061790/hello_world/lnjtyflijeweedxggnit.jpg",
+	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+	conversation_ids: [first_convo.id, second_convo.id, third_convo.id]
 })
 
 
 first_message = Message.create({
-	text: "Hello World",
+	text: "Hey everyone! Welcome to the general channel.",
 	conversation_id: 1,
 	user_id: 1
 })
 
 second_message = Message.create({
-	text: "What's Up",
+	text: "It's Science Fair day!",
 	conversation_id: 2,
 	user_id: 2
-})
-
-third_message = Message.create({
-	text: "C00L",
-	conversation_id: 1,
-	user_id: 1
 })
 
 fourth_message = Message.create({
 	text: "Hey guys! Anyone need any help?",
 	conversation_id: 4,
 	user_id: 3
-})
-
-fifth_message = Message.create({
-	text: "Let me know!",
-	conversation_id: 4,
-	user_id: 3
-})
-
-first_note = Notification.create({
-	user_id: 1,
-	content: "1 new notification"
-})
-
-first_note = Notification.create({
-	user_id: 2,
-	content: "1 new notification"
 })
 
