@@ -1,24 +1,9 @@
-# README
+Slackers (Backend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails API with endpoints for users, conversations, messages, and notifications
+Real time chats and notifications through Action Cable 
+Auth via Bcrypt and JWT
 
-Things you may want to cover:
+Ruby/Rails, Action Cable
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For Slackers Frontend, see:https://github.com/carlypecora/mod-5-project-frontend
