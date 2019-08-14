@@ -10,6 +10,9 @@ class ConversationsController < ApplicationController
     conversation = Conversation.create(conversation_params)
 
 	    if conversation.save
+	    	user = User.find(params[:user_id])
+	    	user.conversations << conversation
+	    	user.save
 		    # serialized_data = ActiveModelSerializers::Adapter::Json.new(ConversationSerializer.new(conversation)).serializable_hash
 		   	ActionCable.server.broadcast 'conversations_channel', ConversationSerializer.new(conversation)
 		    render json: conversation
