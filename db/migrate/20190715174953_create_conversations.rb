@@ -6,5 +6,6 @@ class CreateConversations < ActiveRecord::Migration[5.2]
       t.boolean :dm, :default => false 
 
       t.timestamps
+  	end
   end
 end
